@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    .card-type-american-express td:first-child:before {
+      content: "American Express ";
+    }
+
+    .card-type-american-express td:nth-child(2):before {
+      content: "34, 37 ";
+    }
+
+    .card-type-american-express td:last-child:before {
+      content: "15 ";
+    }
+
+    .card-type-mastercard td:first-child:before {
+      content: "MasterCard ";
+    }
+
+    .card-type-mastercard td:nth-child(2):before {
+      content: "51-55 ";
+    }
+
+    .card-type-mastercard td:last-child:before {
+      content: "16 ";
+    }
+
+    .card-type-visa td:first-child:before {
+      content: "VISA ";
+    }
+
+    .card-type-visa td:nth-child(2):before {
+      content: "4 ";
+    }
+
+    .card-type-visa td:last-child:before {
+      content: "13, 16 ";
+    }
+
+
+    .card-type-discover td:first-child:before {
+      content: "Discover ";
+    }
+
+    .card-type-discover td:nth-child(2):before {
+      content: "6011 ";
+    }
+
+    .card-type-discover td:last-child:before {
+      content: "15, 16 ";
+    }
+
+    .card-type-diners-club td:first-child:before {
+      content: "Diners Club ";
+    }
+
+    .card-type-diners-club td:nth-child(2):before {
+      content: "300-305 ";
+    }
+
+    .card-type-diners-club td:last-child:before {
+      content: "14, 16";
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>Card Type</th>
+      <th>Starting With</th>
+      <th>Length</th>
+    </tr>
+    <tr class="card-type-american-express">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="card-type-mastercard">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="card-type-visa">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="card-type-discover">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="card-type-diners-club">
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</body>
+</html>

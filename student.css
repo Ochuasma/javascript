@@ -1,0 +1,36 @@
+/* Mandatory Fields */
+label:after {
+    content: " *";
+    color: red;
+  }
+  
+  /* Name should not have a maximum of 20 characters */
+  input[name="student-name"] {
+    maxlength: 20;
+  }
+  
+  /* Address – Specify in Text Area */
+  textarea[name="temporary-address"], textarea[name="permanent-address"] {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  /* Preferences – Minimum Two colors should be selected */
+  input[type="checkbox"][name="preferences"] {
+    min-width: 20px;
+    min-height: 20px;
+  }
+  
+  /* Password and verify password must match */
+  input[name="password"], input[name="verify-password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  input[name="password"]:invalid, input[name="verify-password"]:invalid {
+    border: 1px solid red;
+  }
+  
+  input[name="password"]:valid, input[name="verify-password"]:valid {
+    border: 1px solid green;
+  }

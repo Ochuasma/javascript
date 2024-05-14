@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Registration Form</title>
+  <style>
+   .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>Student Registration Form</h2>
+  <form id="registration-form">
+    <div>
+      <label for="student-name">Name:</label>
+      <input type="text" id="student-name" name="student-name" maxlength="30">
+      <span class="error" id="name-error"></span>
+    </div>
+
+    <div>
+      <label for="register-number">Register Number:</label>
+      <input type="text" id="register-number" name="register-number">
+      <span class="error" id="register-error"></span>
+    </div>
+
+    <div>
+      <label for="dob">DOB:</label>
+      <input type="date" id="dob" name="dob">
+    </div>
+
+    <div>
+      <label for="program">Program:</label>
+      <input type="text" id="program" name="program">
+    </div>
+
+    <div>
+      <label for="email-id">Email ID:</label>
+      <input type="email" id="email-id" name="email-id">
+      <span class="error" id="email-error"></span>
+    </div>
+
+    <div>
+      <label for="temporary-address">Temporary Address:</label>
+      <textarea id="temporary-address" name="temporary-address"></textarea>
+    </div>
+
+    <div>
+      <label for="permanent-address">Permanent Address:</label>
+      <textarea id="permanent-address" name="permanent-address"></textarea>
+      <input type="checkbox" id="same-as-temp" name="same-as-temp">
+      <label for="same-as-temp">Permanent address is same as temporary address</label>
+    </div>
+
+    <div>
+      <label for="phone-number">Phone Number:</label>
+      <input type="tel" id="phone-number" name="phone-number" maxlength="10">
+      <span class="error" id="phone-error"></span>
+    </div>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('registration-form');
+    const nameInput = document.getElementById('student-name');
+    const registerInput = document.getElementById('register-number');
+    const emailInput = document.getElementById('email-id');
+    const phoneInput = document.getElementById('phone-number');
+    const tempAddressInput = document.getElementById('temporary-address');
+    const permAddressInput = document.getElementById('permanent-address');
+    const sameAsTempCheckbox = document.getElementById('same-as-temp');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+    
+      if (nameInput.value.length > 30 ||!/^[a-zA-Z]+$/.test(nameInput.value)) {
+        document.getElementById('name-error').innerHTML = 'Name should not exceed 30 characters and can only be alphabets.';
+      } else {
+        document.getElementById('name-error').innerHTML = '';
+      }
+
+
+      if (!/^[a-zA-Z0-9]+$/.test(registerInput.value)) {
+        document.getElementById('register-error').innerHTML = 'Register number should have alphabets and numbers only.';
+      } else {
+        document.getElementById('register-error').innerHTML = '';
+      }
+
+      if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value)) {
+        document.getElementById('email-error').innerHTML = 'Invalid email address.';
+      } else {
+        document.getElementById('email-error').innerHTML = '';
+      }
+
+      if (phoneInput.value.length!== 10 ||!/^\d+$/.test(phoneInput.value)) {
+        document.getElementById('phone-error').innerHTML = 'Mobile number should be exactly 10 digits.';
+      } else {
+        document.getElementById('phone-error').innerHTML = '';
+      }
+
+      if (sameAsTempCheckbox.checked) {
+        permAddressInput.value = tempAddressInput.value;
+        permAddressInput.disabled = true;
+      } else {
+        permAddressInput.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
